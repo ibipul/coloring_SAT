@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>K Coloring SAT problem by ibipul</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>K Coloring SAT problem</h1>
+        <p>Solving a K-coloring problem with SAT</p>
+
+        <p class="view"><a href="https://github.com/ibipul/coloring_SAT">View the Project on GitHub <small>ibipul/coloring_SAT</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/ibipul/coloring_SAT/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/ibipul/coloring_SAT/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/ibipul/coloring_SAT">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Author:</p>
+
+<ul>
+<li>Bipul Islam</li>
+</ul><hr><h2>
+<a name="k-coloring-with-sat" class="anchor" href="#k-coloring-with-sat"><span class="octicon octicon-link"></span></a>K-Coloring with SAT</h2>
+
+<p>Given a Graph( <strong>G</strong> ) and a number of colours ( <strong>K</strong> ), the program says whether the Graph is K colourable. A python script is used to convert the graph to it's SAT in <strong>CNF</strong> form, which is then fed to a SAT solver <a href="https://www.princeton.edu/%7Echaff/zchaff.html"><strong>zchaff</strong></a> which states whether the it's colorable or not or simply undecidable.</p>
+
+<h4>
+<a name="graph-to-cnf-mapping" class="anchor" href="#graph-to-cnf-mapping"><span class="octicon octicon-link"></span></a>Graph to CNF Mapping</h4>
+
+<ul>
+<li>For each vertex i in  vertex set V &amp; color c in {1,2... k} use U Xic {c= 1,2...k}.</li>
+<li>For each i in V, ∩ ∩ (Xic Implies not Xid) where c={1...k-1} &amp; d={c+1...k}.</li>
+<li>For each edge e(i,j) in G, ∩ (Xic Implies not Xjc) c={1,2...k}.</li>
+</ul><h4>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h4>
+
+<pre><code>./graph2cnf.py graph_i.txt &gt; graph_i.cnf
+./zchaff graph_i.cnf
+</code></pre>
+
+<h5>
+<a name="zchaff" class="anchor" href="#zchaff"><span class="octicon octicon-link"></span></a>Zchaff</h5>
+
+<p><em>source (ver--2008.10.12) is included in the project rep as a</em> <strong>.zip</strong>, <em>extract and then use</em> <strong>make</strong> <em>(Makefile is included in the source) to create the executable it then copy the executable to any location and run as mentioned before</em></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/ibipul">ibipul</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47995334-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
